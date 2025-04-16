@@ -12,11 +12,16 @@ body{
     color: #fff;
 }
 #header{
+    padding-top: 100px;
     width: 100%;
     height: 100vh;
     background-image: url(images/background.png);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 .container{
     padding: 10px 10%;
@@ -56,7 +61,7 @@ nav ul li a:hover::after{
     width: 100%;
 }
 .header-text{
-    margin-top: 20%;
+    margin-top: 40px;
     font-size: 30px;
 }
 .header-text h1{
@@ -68,19 +73,16 @@ nav ul li a:hover::after{
 }
 .header-image img {
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 350px;
+    height:auto;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 3;
+    filter: drop-shadow(0 0 10px #ff004f);
 }
 
-/* .header-image img {
-    border-radius: 50%;
-    max-width: 250px;
-    height: auto;
-    object-fit: cover;
-} */
 
 /* ---------about------------- */
 #about{
@@ -109,6 +111,7 @@ nav ul li a:hover::after{
 }
 .tab-titles{
     display: flex;
+    gap: 60px;
     margin: 20px 0 40px;
 }
 .tab-links{
@@ -207,6 +210,8 @@ nav ul li a:hover::after{
 }
 .work img{
     width: 100%;
+    height: 400px;
+    object-fit: cover;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
@@ -413,9 +418,14 @@ form .btn2{
 .header-content {
     display: flex;
     justify-content: space-between;
+    min-height: calc(100vh - 100px);
     align-items: center;
-    height: calc(100vh - 40px);
-   gap: 40px;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding-top: 40px ;
+    height: 100%;
+    position: relative;
+    z-index: 2;
   }
 
   .header-text {
@@ -432,12 +442,6 @@ form .btn2{
     align-items: center;
   }
 
-  .header-image img {
-    height: 100vh;
-    width: auto;
-    object-fit: cover;
-    border-radius: 10px;
-  }
 
   /* RESPONSIVE: STACK IMAGE AND TEXT ON MOBILE */
   @media only screen and (max-width: 600px) {
@@ -453,8 +457,5 @@ form .btn2{
       justify-content: center;
     }
 
-    .header-image img {
-      height: auto;
-      width: 100%;
-    }
+
   }
